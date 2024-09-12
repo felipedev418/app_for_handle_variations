@@ -1,0 +1,16 @@
+.table td {
+  vertical-align: middle;
+}
+
+.form-inline {
+  margin-top: 10px;
+}
+
+/* .save-btn {
+    margin-top: 10px;
+  }
+   */
+
+.status-btn {
+  width: 100px;
+}

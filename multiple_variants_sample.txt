@@ -1,0 +1,26 @@
+FBXL4:c.65G>C (p.Arg22Pro)
+FBXL4:c.65G>A (p.Arg22Gln)
+FBXL4:c.79A>G (p.Thr27Ala)
+FBXL4:c.105T>A (p.His35Gln)
+FBXL4:c.249T>G (p.Asn83Lys)
+FBXL4:c.351G>A (p.=)
+FBXL4:c.429A>G (p.=)
+FBXL4:c.465C>T (p.=)
+FBXL4:c.468T>C (p.=)
+FBXL4:c.702T>C (p.=)
+FBXL4:c.737T>C (p.Ile246Thr)
+FBXL4:c.744T>C (p.=)
+FBXL4:c.872T>C (p.Ile291Thr)
+FBXL4:c.906A>G (p.=)
+FBXL4:c.978A>G (p.=)
+FBXL4:c.1073G>A (p.Arg358Lys)
+
+
+AGO1:p.Phe180del
+AGO1:p.Leu190Pro
+AGO1:p.Leu190Arg
+AGO1:p.Gly199Ser
+AGO1:p.Val254Ile
+AGO1:p.Glu376del
+
+ps://pubmed.ncbi.nlm.nih.gov/34930816/

@@ -1,0 +1,80 @@
+extends layout
+
+block content
+  h1.mt-4.mb-4 Curate PMID
+  if message
+    p= message
+  else
+    .card
+      .card-body
+        h5.card-title PMID: #{pmid.pmid}
+        p.card-text
+          strong Link 1: 
+          a(href="https://pubmed.ncbi.nlm.nih.gov/#{pmid.pmid}/", target='_blank') https://pubmed.ncbi.nlm.nih.gov/#{pmid.pmid}/
+          br
+          strong Link 2: 
+          a(href="https://www.ncbi.nlm.nih.gov/clinvar/?term=#{pmid.pmid}[pmid.pmid]", target='_blank') https://www.ncbi.nlm.nih.gov/clinvar/?term=#{pmid.pmid}[#{pmid.pmid}]
+        form#curation-form(data-pmid=pmid.pmid)
+          #variations-container
+            .form-group.variation-group
+              label(for='variation-0') Variation
+              .input-group
+                input.form-control.variation-input(type='text', name='variation-0', required)
+                .input-group-append
+                  button.btn.btn-danger.remove-variation(type='button') Remove
+          button#add-variation.btn.btn-secondary.mb-3.mr-2(type='button') + Add Variation
+          button#add-multiple-variations.btn.btn-info.mb-3(type='button', data-toggle='modal', data-target='#multipleVariantsModal') Add Multiple Variants
+          br
+          button#save-btn.btn.btn-primary.mr-2(type='submit') Save
+          a.btn.btn-secondary(href='/curate') Cancel
+
+  #multipleVariantsModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='multipleVariantsModalLabel', aria-hidden='true')
+    .modal-dialog.modal-lg(role='document')
+      .modal-content
+        .modal-header
+          h5#multipleVariantsModalLabel.modal-title Add Multiple Variants
+          button.close(type='button', data-dismiss='modal', aria-label='Close')
+            span(aria-hidden='true') &times;
+        .modal-body
+          textarea#multipleVariantsInput.form-control(rows='10', placeholder='Enter multiple variants, one per line')
+        .modal-footer
+          button.btn.btn-secondary(type='button', data-dismiss='modal') Close
+          button#addMultipleVariantsBtn.btn.btn-primary(type='button') Add Variants
+
+//- block scripts
+//-   script(src='/js/curate.js')
+
+
+
+
+//- extends layout
+
+//- block content
+//-   h1.mt-4.mb-4 Curate PMID
+//-   if message
+//-     p= message
+//-   else
+//-     .card
+//-       .card-body
+//-         h5.card-title PMID: #{pmid.pmid}
+//-         p.card-text
+//-           strong Link 1: 
+//-           a(href="https://pubmed.ncbi.nlm.nih.gov/#{pmid.pmid}/", target='_blank') https://pubmed.ncbi.nlm.nih.gov/#{pmid.pmid}/
+//-           br
+//-           strong Link 2: 
+//-           a(href="https://www.ncbi.nlm.nih.gov/clinvar/?term=#{pmid.pmid}[pmid.pmid]", target='_blank') https://www.ncbi.nlm.nih.gov/clinvar/?term=#{pmid.pmid}[#{pmid.pmid}]
+//-         form#curation-form(data-pmid=pmid.pmid)
+//-           #variations-container
+//-             .form-group.variation-group
+//-               label(for='variation-0') Variation
+//-               .input-group
+//-                 input.form-control.variation-input(type='text', name='variation-0', required)
+//-                 .input-group-append
+//-                   button.btn.btn-danger.remove-variation(type='button') Remove
+//-           button#add-variation.btn.btn-secondary.mb-3(type='button') + Add Variation
+//-           br
+//-           button#save-btn.btn.btn-primary.mr-2(type='submit') Save
+//-           a.btn.btn-secondary(href='/curate') Cancel
+
+//- block scripts
+//-   script(src='/js/curate.js')

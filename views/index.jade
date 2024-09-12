@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  h1.mt-4.mb-4 PMID Variations
+  table.table
+    thead
+      tr
+        th PMID
+        th Links
+        th Variations
+        th Status
+        th Action
+    tbody
+      each pmid in pmids
+        tr(data-pmid=pmid.pmid)
+          td= pmid.pmid
+          td
+            a(href="https://pubmed.ncbi.nlm.nih.gov/#{pmid.pmid}/", target='_blank') PubMed
+            br
+            a(href="https://www.ncbi.nlm.nih.gov/clinvar/?term=#{pmid.pmid}[PMID]", target='_blank') ClinVar
+          td
+            .form-inline
+              input.form-control.mr-2(type='text', placeholder='Gene', name='gene')
+              input.form-control.mr-2(type='text', placeholder='Variation', name='variation')
+          td
+            button.btn.btn-sm.status-btn(class=pmid.status === 'completed' ? 'btn-success' : 'btn-warning')= pmid.status
+          td
+            button.btn.btn-primary.mr-2.save-btn Save
+            button.btn.btn-secondary.cancel-btn Cancel

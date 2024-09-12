@@ -1,0 +1,18 @@
+{
+    "name": "pmid-variations-project",
+    "version": "1.0.0",
+    "description": "A web project to manage PMIDs and their variations",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js",
+      "seed": "node seeders/seeder.js"
+    },
+    "dependencies": {
+      "express": "^4.17.1",
+      "mongoose": "^6.0.12",
+      "jade": "^1.11.0",
+      "body-parser": "^1.19.0",
+      "dotenv": "^16.3.2"
+    }
+  }
+  
